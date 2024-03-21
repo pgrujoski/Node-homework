@@ -4,7 +4,7 @@ const read = async () => {
     return new Promise((resolve, reject) => {
         fs.readFile("data.json", "utf-8", (err, data) => {
             if (err) {
-                return err
+                return reject(err)
             } else if (!data) {
                 return resolve([])
             } else {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>Анализа на текст</h1>
+    <form action="/analiza" method="post">
+        <label for="data">Enter Data:</label><br>
+        <textarea id="data" name="data" rows="4" cols="50" placeholder="Внеси текст..."></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <% if (inputData) { %>
+        <h2>Обработени податоци:</h2>
+        <ul>
+            <li>Вкупен број на карактери: <%= vkupnoKarakteri %>
+            </li>
+            <li>Вкупен број на зборови помали од 5 карактери: <%= pomaliOd5 %>
+            </li>
+            <li>Вкупен број на зборови поголеми од 5 карактери: <%= pogolemiOd5 %>
+            </li>
+            <li>Вкупен број на зборови еднакви на 5 карактери: <%= ednakviNa5 %>
+            </li>
+            <li>Вкупен број на реченици: <%= vkupnoRecenici %>
+            </li>
+            <li>Вкупен број на зборови: <%= vkupnoZborovi %>
+            </li>
+            <li>Вкупен број на зборови кои почнуваат со самогласка: <%= vkupnoSamoglaski %>
+            </li>
+        </ul>
+        <% } %>
+</body>
+
+</html>

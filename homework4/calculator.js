@@ -43,11 +43,11 @@ const handlerCalculator = (req, res) => {
             res.end(`${result}`);
             break;
         case "kvadrat":
-            result = Number(num1) ** Number(num2); // num1 * num1
+            result = Number(num1) * Number(num1); // num1 * num1
             res.end(`${result}`);
             break;
         case "kubik":
-            result = Number(num1) ** 3;
+            result = Number(num1) * Number(num1) * Number(num1)
             res.end(`${result}`);
             break;
         default:

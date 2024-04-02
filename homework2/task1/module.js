@@ -25,8 +25,22 @@ async function read(file) {
         });
     });
 }
+
+async function append (file, data) {
+    return new Promise((resolve, reject) => {
+        fs.appendFile(file, data, (err) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve()
+            }
+        })
+    })
+}
+
 module.exports = {
     write,
     read,
+    append,
 }
 

@@ -9,19 +9,15 @@ const data = {
 }
 
 app.get("/", (req, res) => {
-    res.json(data)
-})
-
-app.get("/cars", (req, res) =>{
-    res.json(data.cars)
-})
-
-app.get("/books", (req, res) =>{
-    res.json(data.books)
-})
-
-app.get("/cities", (req, res) =>{
-    res.json(data.cities)
+    res.send(`
+    <h1>Home</h1>
+    <h2>Cars</h2>
+    <u1>${data.cars.map(car => `<li>${car}</li>`).join('')}</u1>
+    <h2>Books</h2>
+    <u1>${data.books.map(book => `<li>${book}</li>`).join('')}</u1>
+    <h2>Cities</h2>
+    <u1>${data.cities.map(city => `<li>${city}</li>`).join('')}</u1>
+`)
 })
 
 app.use((req, res) => {
